@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathontoolbelt">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Linear_equation"></activity>
+        <activity android:name=".Quadratic" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Equation_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
