@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131313"
+    android:orientation="vertical"
+    tools:context=".Converter">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text=" Unit Converter"
+        android:textColor="#F7FAFB"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="125dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="LENGTH"
+        android:textSize="18sp"
+        app:backgroundTint="#FA0606"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/b2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+
+        android:id="@+id/b2"
+        android:layout_width="170dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="125dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="WEIGHT"
+        android:textSize="18sp"
+        app:backgroundTint="#3F51B5"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/b3"
+        app:layout_constraintEnd_toEndOf="@+id/b1"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/b1"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="TEMPERATURE"
+        android:textSize="18sp"
+        app:backgroundTint="#4CAF50"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/b2"
+        app:layout_constraintStart_toStartOf="@+id/b2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
