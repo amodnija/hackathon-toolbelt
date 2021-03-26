@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import java.util.Objects;
 
-public class Startup extends AppCompatActivity {
+public class Startup1 extends AppCompatActivity {
 
     private Button stopwatch, converter, mainactivity, equationmenu;
 
@@ -16,7 +16,7 @@ public class Startup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(getSupportActionBar()).hide();
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.act);
         stopwatch = (Button) findViewById(R.id.button);
         mainactivity = (Button) findViewById(R.id.button1);
         converter = (Button) findViewById(R.id.button2);
@@ -27,7 +27,7 @@ public class Startup extends AppCompatActivity {
             startActivity(intent);
         });
 
-        /*mainactivity.setOnClickListener(view -> {
+        mainactivity.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
@@ -40,7 +40,6 @@ public class Startup extends AppCompatActivity {
         equationmenu.setOnClickListener(view -> {
             Intent intent = new Intent(this, Equation_menu.class);
             startActivity(intent);
-        });**/
-
+        });
     }
 }
