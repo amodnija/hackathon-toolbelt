@@ -3,12 +3,18 @@
     package="com.amod.hackathon_toolbelt">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathontoolbelt">
+        <activity android:name=".Simultaneous_eq"></activity>
+        <activity android:name=".Linear_equation" />
+        <activity android:name=".Quadratic" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Equation_menu">
         <activity android:name=".Converter"></activity>
         <activity android:name=".Temperature" />
         <activity android:name=".Weight" />

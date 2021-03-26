@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Equation_menu"
+    android:background="#373736"
+
+    >
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="EQUATION SOLVER"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+
+        />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        android:text="LINEAR EQUATION"
+        app:backgroundTint="#C2185B"
+
+        app:cornerRadius="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        app:backgroundTint="#C2185B"
+
+
+        app:cornerRadius="20dp"
+        android:text="SIMULTANEOUS EQUATIONS"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        app:backgroundTint="#C2185B"
+
+        app:cornerRadius="20dp"
+        android:text="QUADRATIC EQUATION"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        />
+
+
+
+
+
+</LinearLayout>
