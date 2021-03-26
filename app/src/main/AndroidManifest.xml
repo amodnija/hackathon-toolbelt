@@ -13,8 +13,7 @@
         <activity android:name=".Simultaneous_eq"></activity>
         <activity android:name=".Linear_equation" />
         <activity android:name=".Quadratic" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Equation_menu">
+        <activity android:name=".Equation_menu"/>
         <activity android:name=".Converter"></activity>
         <activity android:name=".Temperature" />
         <activity android:name=".Weight" />
