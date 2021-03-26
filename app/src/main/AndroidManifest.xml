@@ -3,6 +3,7 @@
     package="com.amod.hackathon_toolbelt">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathontoolbelt">
         <activity android:name=".Startup1">
+        <activity android:name=".Simultaneous_eq"></activity>
+        <activity android:name=".Linear_equation" />
+        <activity android:name=".Quadratic" />
+        <activity android:name=".Equation_menu"/>
+        <activity android:name=".Converter"></activity>
+        <activity android:name=".Temperature" />
+        <activity android:name=".Weight" />
+        <activity android:name=".Length" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
