@@ -40,7 +40,6 @@ public class Stopwatch extends AppCompatActivity {
     @SuppressLint({"ClickableViewAccessibility", "DefaultLocale", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Objects.requireNonNull(getSupportActionBar()).hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity);
         start = findViewById(R.id.button);

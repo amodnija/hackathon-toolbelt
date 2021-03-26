@@ -42,31 +42,33 @@ public class Length extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double amount = Double.parseDouble(et1.getText().toString());
-                if(sp1.getSelectedItem().toString() == "Kilometres" && sp2.getSelectedItem().toString() == "Kilometres" )
-                {
-                    tot = amount;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
+                if(et1.getText().toString().trim().length()==0) {
+                    et1.setError("Value not entered");
+                    et1.requestFocus();
                 }
+                else {
+                    Double amount = Double.parseDouble(et1.getText().toString());
+                    if (sp1.getSelectedItem().toString() == "Kilometres" && sp2.getSelectedItem().toString() == "Kilometres") {
+                        tot = amount;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Kilometres" && sp2.getSelectedItem().toString() == "Miles" )
-                {
-                    tot = amount * 0.621;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
-                }
+                    if (sp1.getSelectedItem().toString() == "Kilometres" && sp2.getSelectedItem().toString() == "Miles") {
+                        tot = amount * 0.621;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Miles" && sp2.getSelectedItem().toString() == "Kilometres" )
-                {
-                    tot = amount * 1.609;
-                    et2.setText(tot.toString());
-                }
+                    if (sp1.getSelectedItem().toString() == "Miles" && sp2.getSelectedItem().toString() == "Kilometres") {
+                        tot = amount * 1.609;
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Miles" && sp2.getSelectedItem().toString() == "Miles" )
-                {
-                    tot = amount;
-                    et2.setText(tot.toString());
+                    if (sp1.getSelectedItem().toString() == "Miles" && sp2.getSelectedItem().toString() == "Miles") {
+                        tot = amount;
+                        et2.setText(tot.toString());
+                    }
                 }
             }
         });

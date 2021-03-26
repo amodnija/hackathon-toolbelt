@@ -41,31 +41,33 @@ public class Weight extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double amount = Double.parseDouble(et1.getText().toString());
-                if(sp1.getSelectedItem().toString() == "Kilograms" && sp2.getSelectedItem().toString() == "Kilograms" )
-                {
-                    tot = amount;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
+                if(et1.getText().toString().trim().length()==0) {
+                    et1.setError("Value not entered");
+                    et1.requestFocus();
                 }
+                else {
+                    Double amount = Double.parseDouble(et1.getText().toString());
+                    if (sp1.getSelectedItem().toString() == "Kilograms" && sp2.getSelectedItem().toString() == "Kilograms") {
+                        tot = amount;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Kilograms" && sp2.getSelectedItem().toString() == "Pounds" )
-                {
-                    tot = amount * 2.205;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
-                }
+                    if (sp1.getSelectedItem().toString() == "Kilograms" && sp2.getSelectedItem().toString() == "Pounds") {
+                        tot = amount * 2.205;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Pounds" && sp2.getSelectedItem().toString() == "Kilograms" )
-                {
-                    tot = amount * 0.454;
-                    et2.setText(tot.toString());
-                }
+                    if (sp1.getSelectedItem().toString() == "Pounds" && sp2.getSelectedItem().toString() == "Kilograms") {
+                        tot = amount * 0.454;
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Pounds" && sp2.getSelectedItem().toString() == "Pounds" )
-                {
-                    tot = amount;
-                    et2.setText(tot.toString());
+                    if (sp1.getSelectedItem().toString() == "Pounds" && sp2.getSelectedItem().toString() == "Pounds") {
+                        tot = amount;
+                        et2.setText(tot.toString());
+                    }
                 }
             }
         });

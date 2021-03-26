@@ -15,7 +15,7 @@ public class Startup1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        //Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.act);
         stopwatch = (Button) findViewById(R.id.button);
         mainactivity = (Button) findViewById(R.id.button1);

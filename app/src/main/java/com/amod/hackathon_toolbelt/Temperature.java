@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Temperature extends AppCompatActivity {
     Spinner sp1,sp2;
@@ -40,31 +41,34 @@ public class Temperature extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double amount = Double.parseDouble(et1.getText().toString());
-                if(sp1.getSelectedItem().toString() == "Celsius" && sp2.getSelectedItem().toString() == "Celsius" )
-                {
-                    tot = amount;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
-                }
 
-                if(sp1.getSelectedItem().toString() == "Celsius" && sp2.getSelectedItem().toString() == "Fahrenheit" )
-                {
-                    tot = (amount * 1.8)+32;
-                    Log.i("TAG", "onClick: "+ tot);
-                    et2.setText(tot.toString());
+                if(et1.getText().toString().trim().length()==0) {
+                    et1.setError("Value not entered");
+                    et1.requestFocus();
                 }
+                else {
+                    Double amount = Double.parseDouble(et1.getText().toString());
+                    if (sp1.getSelectedItem().toString() == "Celsius" && sp2.getSelectedItem().toString() == "Celsius") {
+                        tot = amount;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Fahrenheit" && sp2.getSelectedItem().toString() == "Celsius" )
-                {
-                    tot = (amount- 32) * 0.6 ;
-                    et2.setText(tot.toString());
-                }
+                    if (sp1.getSelectedItem().toString() == "Celsius" && sp2.getSelectedItem().toString() == "Fahrenheit") {
+                        tot = (amount * 1.8) + 32;
+                        Log.i("TAG", "onClick: " + tot);
+                        et2.setText(tot.toString());
+                    }
 
-                if(sp1.getSelectedItem().toString() == "Fahrenheit" && sp2.getSelectedItem().toString() == "Fahrenheit" )
-                {
-                    tot = amount;
-                    et2.setText(tot.toString());
+                    if (sp1.getSelectedItem().toString() == "Fahrenheit" && sp2.getSelectedItem().toString() == "Celsius") {
+                        tot = (amount - 32) * 0.6;
+                        et2.setText(tot.toString());
+                    }
+
+                    if (sp1.getSelectedItem().toString() == "Fahrenheit" && sp2.getSelectedItem().toString() == "Fahrenheit") {
+                        tot = amount;
+                        et2.setText(tot.toString());
+                    }
                 }
             }
         });

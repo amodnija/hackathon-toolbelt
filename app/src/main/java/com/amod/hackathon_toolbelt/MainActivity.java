@@ -3,7 +3,6 @@ package com.amod.hackathon_toolbelt;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,17 +14,12 @@ public class MainActivity extends AppCompatActivity {
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonAdd, buttonSub, buttonDivision, buttonMul, button10, buttonln, buttone, buttonexp, buttonpi, buttonC, buttonEqual, buttonbsp, buttoncos, buttonsin, buttontan, buttonbrop, buttonbrcl;
     EditText mEditText;
 
-    float mValueOne, mValueTwo;
-
-    boolean mAddition, mSubtract, mMultiplication, mDivision;
-
     public String rep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         button0 = (Button) findViewById(R.id.button0);
