@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.io.*;
 
 public class Linear_equation extends AppCompatActivity {
 
@@ -32,6 +34,7 @@ public class Linear_equation extends AppCompatActivity {
             public void onClick(View v) {
 
                 String eqn = et.getText().toString();
+                String ANS="";
                 tv.setText("");
                 boolean check = true;
 
@@ -42,102 +45,87 @@ public class Linear_equation extends AppCompatActivity {
                     }
                     check=false;
                 }
-                /*if(eqn.matches("^(?![xX0-9+=-])"[A-Za-z!#$%&{|}~:;<>?@*,.^_`\\'\\\" \\t\\r\\n\\f]")||eqn.matches("")) {
-                   Toast.makeText(Linear_equation.this, "Make sure your equation does not contain any unnecessary special characters or space", Toast.LENGTH_LONG).show();
-                    check = false;
 
-                }*/
                 try{
 
                 if(check) {
 
+                    InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
+                    int n = eqn.length(),
+                                    sign = 1, coeff = 0;
+                            int total = 0, i = 0;
 
-                    float ans = 0;
-                    float coeffSum = 0;
-                    float constSum = 0;
-                    float[] coeffx = new float[100];
-                    float[] constant = new float[100];
-
-                    eqn += "\n";
-                    // System.out.println(eqn);
-                    for (int i = 0, j = 0, k = 0; i < eqn.length() - 1; ) {
-                        if (eqn.charAt(i + 1) == 'x' && i < eqn.indexOf("=")) {
-                            if (i != 0 && eqn.charAt(i - 1) == '-') {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = -(Integer.parseInt(x, 10));
-                                    coeffx[j++] = n;
+                            // Traverse the equation
+                            for (int j = 0; j < n; j++)
+                            {
+                                if (eqn.charAt(j) == '+' ||
+                                        eqn.charAt(j) == '-')
+                                {
+                                    if (j > i)
+                                        total += sign * Integer.parseInt(eqn.substring(i, j));
+                                    i = j;
                                 }
-                            } else {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = Integer.parseInt(x, 10);
-                                    coeffx[j++] = n;
+
+                                // For cases such
+                                // as: x, -x, +x
+                                else if (eqn.charAt(j) == 'x')
+                                {
+                                    if ((i == j) ||
+                                            eqn.charAt(j - 1) == '+')
+                                        coeff += sign;
+
+                                    else if (eqn.charAt(j - 1) == '-')
+                                        coeff -= sign;
+
+                                    else
+                                        coeff += sign * Integer.parseInt(eqn.substring(i, j));
+                                    i = j + 1;
+                                }
+
+                                // Flip sign once
+                                // '=' is seen
+                                else if (eqn.charAt(j) == '=')
+                                {
+                                    if (j > i)
+                                        total += sign * Integer.parseInt(eqn.substring(i, j));
+                                    sign = -1;
+                                    i = j + 1;
                                 }
                             }
-                            i += 3;
-                        }
-                        if (eqn.charAt(i + 1) == 'x' && i > eqn.indexOf("=")) {
-                            if (eqn.charAt(i - 1) == '-') {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = Integer.parseInt(x, 10);
-                                    coeffx[j++] = n;
-                                }
-                            } else {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = -(Integer.parseInt(x, 10));
-                                    coeffx[j++] = n;
-                                }
-                            }
-                            i += 3;
-                        }
-                        if (eqn.charAt(i + 1) != 'x' && i < eqn.indexOf("=")) {
-                            if (eqn.charAt(i - 1) == '-') {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = -(Integer.parseInt(x, 10));
-                                    constant[k++] = n;
-                                }
-                            } else {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = Integer.parseInt(x, 10);
-                                    constant[k++] = n;
-                                }
-                            }
-                            i += 2;
-                        }
-                        if (eqn.charAt(i + 1) != 'x' && i > eqn.indexOf("=")) {
-                            if (eqn.charAt(i - 1) == '-') {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = Integer.parseInt(x, 10);
-                                    constant[k++] = n;
-                                }
-                            } else {
-                                String x = eqn.substring(i, i + 1);
-                                if (x != "+" && x != "-") {
-                                    int n = -(Integer.parseInt(x, 10));
-                                    constant[k++] = n;
-                                }
-                            }
-                            i += 2;
-                        }
 
-                    }
-                    for (int i = 0; i < coeffx.length; i++)
-                        coeffSum += coeffx[i];
-                    for (int i = 0; i < constant.length; i++)
-                        constSum += constant[i];
-                    ans = constSum / coeffSum;
+                            // There may be a
+                            // number left in the end
+                            if (i < n)
+                                total = total + (sign * Integer.parseInt(eqn.substring(i)));
 
-                    tv.setText(Float.toString((-ans)));
+                            // For infinite
+                            // solutions
+                            if (coeff == 0 &&
+                                    total == 0)
+                                ANS = "Infinite solutions";
+
+                            // For no solution
+                            if (coeff == 0 &&
+                                    total != 0)
+                                ANS = "No solution";
 
 
-                }}catch (Exception e){
+
+                            float ans = -(float)total / (float)coeff;
+                            ANS = (Float.toString(ans));
+                        }
+
+                        // Driver code
+
+
+
+
+                    tv.setText(ANS);
+
+
+                }catch(Exception e){
                     Toast.makeText(Linear_equation.this, "Make sure your equation does not contain any unnecessary characters or spaces", Toast.LENGTH_LONG).show();
 
                 }
@@ -149,6 +137,7 @@ public class Linear_equation extends AppCompatActivity {
             public void onClick(View v) {
                 et.setText("");
                 tv.setText("");
+                tv.setHint("Value of x");
             }
         });
 

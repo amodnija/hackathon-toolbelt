@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Equation_menu"
+    android:background="#373736"
 
     >
 
@@ -15,8 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:text="Equation Solver\nChoose The equation u want to solve"
+        android:layout_marginTop="50dp"
+        android:text="EQUATION SOLVER"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textAlignment="center"
 
         />
@@ -25,8 +29,23 @@
         android:id="@+id/b1"
         android:layout_width="245dp"
         android:layout_height="55dp"
-        android:text="Linear Equation"
+        android:text="LINEAR EQUATION"
+        app:backgroundTint="#C2185B"
 
+        app:cornerRadius="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        app:backgroundTint="#C2185B"
+
+
+        app:cornerRadius="20dp"
+        android:text="SIMULTANEOUS EQUATIONS"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         />
@@ -35,22 +54,14 @@
         android:id="@+id/b2"
         android:layout_width="245dp"
         android:layout_height="55dp"
+        app:backgroundTint="#C2185B"
 
-        android:background="#3FE6D6"
-        android:text="Quadratic equation"
+        app:cornerRadius="20dp"
+        android:text="QUADRATIC EQUATION"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         />
-    <Button
-        android:id="@+id/b7"
-        android:layout_width="245dp"
-        android:layout_height="55dp"
 
-        android:background="#3FE6D6"
-        android:text="Simultaneous Equation"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        />
 
 
 

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Linear_equation"
     android:orientation="vertical"
+    android:background="#373736"
 
     >
 
@@ -13,20 +14,26 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter equation in x below:"
-        android:layout_marginTop="50dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Linear Equation Solver"
         android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:textColor="@color/white"
         tools:layout_editor_absoluteX="287dp"
         tools:layout_editor_absoluteY="191dp" />
 
     <EditText
         android:id="@+id/et4"
         android:layout_width="match_parent"
+        android:textColorHint="#B8A9A9"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         android:layout_height="40dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="50dp"
-        android:hint="(eg.: 2x-5=3)"
+        android:hint="eg.: 2x-5=3"
          />
 
     <LinearLayout
@@ -36,12 +43,15 @@
 
         <Button
             android:id="@+id/b4"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="30dp"
-            android:text="Solve"
-            />
+            android:text="SOLVE"
+            app:backgroundTint="#C2185B"
+
+            app:cornerRadius="20dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -49,8 +59,11 @@
             android:layout_marginTop="31dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="140dp"
-            android:text="Clear"
+            android:text="CLEAR"
             android:id="@+id/b6"
+            app:backgroundTint="#C2185B"
+
+            app:cornerRadius="20dp"
             />
 
     </LinearLayout>
@@ -59,6 +72,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:id="@+id/textView3"
         android:text="Answer "
 
@@ -66,14 +82,19 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="40dp"
-        android:text="TextView"
         android:layout_marginTop="20dp"
+        android:text="Value of X"
+        android:textColor="@color/black"
+        android:background="#C59CAC"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp"
+        android:textSize="13dp"
+
 
         />
-
 
 
 </LinearLayout>
