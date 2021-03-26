@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Linear_equation extends AppCompatActivity {
 
@@ -33,6 +34,7 @@ public class Linear_equation extends AppCompatActivity {
                 String eqn = et.getText().toString();
                 tv.setText("");
                 boolean check = true;
+
                 if (eqn.matches("")) {
                     if(TextUtils.isEmpty(eqn)) {
                         et.setError("Equation cannot be empty");
@@ -40,7 +42,16 @@ public class Linear_equation extends AppCompatActivity {
                     }
                     check=false;
                 }
+                /*if(eqn.matches("^(?![xX0-9+=-])"[A-Za-z!#$%&{|}~:;<>?@*,.^_`\\'\\\" \\t\\r\\n\\f]")||eqn.matches("")) {
+                   Toast.makeText(Linear_equation.this, "Make sure your equation does not contain any unnecessary special characters or space", Toast.LENGTH_LONG).show();
+                    check = false;
+
+                }*/
+                try{
+
                 if(check) {
+
+
 
                     float ans = 0;
                     float coeffSum = 0;
@@ -125,6 +136,9 @@ public class Linear_equation extends AppCompatActivity {
 
                     tv.setText(Float.toString((-ans)));
 
+
+                }}catch (Exception e){
+                    Toast.makeText(Linear_equation.this, "Make sure your equation does not contain any unnecessary characters or spaces", Toast.LENGTH_LONG).show();
 
                 }
             }

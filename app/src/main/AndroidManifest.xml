@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathontoolbelt">
-        <activity android:name=".Linear_equation"></activity>
+        <activity android:name=".Simultaneous_eq"></activity>
+        <activity android:name=".Linear_equation" />
         <activity android:name=".Quadratic" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Equation_menu">

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Equation_menu extends AppCompatActivity {
 
-    Button button1, button2;
+    Button button1, button2, button3;
 
 
 
@@ -19,6 +19,7 @@ public class Equation_menu extends AppCompatActivity {
         setContentView(R.layout.activity_equation_menu);
         button1 = findViewById(R.id.b1);
         button2 = findViewById(R.id.b2);
+        button3 = findViewById(R.id.b7);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,12 @@ public class Equation_menu extends AppCompatActivity {
             }
 
         });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                simul();
+            }
+        });
 
     }
     public void quad()
@@ -47,4 +54,10 @@ public class Equation_menu extends AppCompatActivity {
         Intent intent = new Intent(this, Linear_equation.class);
         startActivity(intent);
     }
+    public void simul()
+    {
+        Intent intent = new Intent(this, Simultaneous_eq.class);
+        startActivity(intent);
+    }
+
 }

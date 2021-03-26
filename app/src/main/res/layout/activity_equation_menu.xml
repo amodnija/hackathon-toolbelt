@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Equation_menu">
+    tools:context=".Equation_menu"
+
+    >
 
 
     <TextView
@@ -15,7 +17,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:text="Equation Solver\nChoose The equation u want to solve"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+
+        />
 
     <Button
         android:id="@+id/b1"
@@ -31,7 +35,19 @@
         android:id="@+id/b2"
         android:layout_width="245dp"
         android:layout_height="55dp"
+
+        android:background="#3FE6D6"
         android:text="Quadratic equation"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        />
+    <Button
+        android:id="@+id/b7"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+
+        android:background="#3FE6D6"
+        android:text="Simultaneous Equation"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         />
