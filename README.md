@@ -1,13 +1,13 @@
 # hackathon-toolbelt
 A combination of tools such as converters, stopwatch, equation solvers, calculator and a completely sentient A.I., ok, maybe not the last one, lite lo :)
 
-#Team Members:
+# Team Members:
 Amod Nijasure
 Bhavya Somani
 Bhavya Mehta
 Siddh Gosar
 
-#Our Mentor:
+# Our Mentor:
 OP Ayush Bhaiya is OP
 
 #APK link:
