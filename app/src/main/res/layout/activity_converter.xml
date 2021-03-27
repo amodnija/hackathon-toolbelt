@@ -10,13 +10,10 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="210dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:text=" Unit Converter"
         android:textColor="#F7FAFB"
         android:textSize="30sp"

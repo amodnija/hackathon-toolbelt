@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">hackathon-toolbelt</string>
+    <string name="stop">Stop</string>
+    <string name="_00_00_000">00:00:000</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+    <string name="save_lap">Save Lap</string>
+    <string name="t">00:00:000</string>
+    <string name="format">00:00:000</string>
+    <string name="max">MAX:0:0:000</string>
+    <string name="min">MIN:0:0:000</string>
 </resources>
